@@ -1,0 +1,29 @@
+#N canvas 407 388 635 300 10;
+#X declare -path C:/Users/David/Desktop/PDMusic_vanilla/Minx/ABSTR_VANILLA
+;
+#X obj 255 33 declare -path C:/Users/David/Desktop/PDMusic_vanilla/Minx/ABSTR_VANILLA
+;
+#X obj 78 35 dumpOSC 8000;
+#X obj 272 199 udpsend;
+#X obj 272 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 272 133 packOSC;
+#X msg 272 95 /alex/fader 0.012;
+#X msg 249 71 /1/fader 0.234;
+#X obj 78 250 print;
+#X obj 78 79 routeOSC;
+#X obj 78 195 route 1;
+#X obj 117 225 route alex;
+#X msg 339 151 connect 192.168.1.255 8888;
+#X msg 342 171 disconnect;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 9 1 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
